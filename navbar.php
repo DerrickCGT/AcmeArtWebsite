@@ -11,22 +11,37 @@
                 </li>
                 <!-- Show all Paintings. -->
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Show all Paintings</a>
+                    <a class="nav-link" href="select_all.php">Show all Paintings</a>
                 </li>
+                <!-- Function for dynamic dropdown elements. -->
+                <?php
+                include_once('connect.php');
+
+                function dynamic_dropdowns($column, $webpage) {
+                    $statement = "SELECT DISTINCT $column FROM paintings";
+                    $result = (connect()->query($statement));
+                    $rows = $result->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($rows as $row) {
+                        ?>
+                        <li><a class="dropdown-item" 
+                               href=<?php echo "$webpage?TAG=" . urlencode("$row[$column]") ?> 
+                               ><?php echo $row[$column]; ?></a></li>
+                            <?php
+                        }
+                    }
+                    ?>
                 <!-- Paintings by Style. -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Paintings by Style</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="question_1.php">Portrait</a></li>
-                        <li><a class="dropdown-item" href="question_2.php">Landscape</a></li>
+                        <?php dynamic_dropdowns('style', 'select_by_style.php'); ?>
                     </ul>
                 </li>
                 <!-- Paintings by Artist. -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Paintings by Artist</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="question_1.php">Leonardo Da Vinchi</a></li>
-                        <li><a class="dropdown-item" href="question_2.php">Van Gaugh</a></li>
+                        <?php dynamic_dropdowns('artist', 'select_by_artist.php'); ?>
                     </ul>
                 </li>
                 <!-- Modify Database. -->
