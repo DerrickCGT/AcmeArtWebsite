@@ -14,6 +14,7 @@
                     <a class="nav-link" href="select_all.php">Show all Paintings</a>
                 </li>
                 <!-- Function for dynamic dropdown elements. -->
+                <!-- We can use this method to display list items for all dropdown menu. eg: Style/Artist/..?-->      
                 <?php
                 include_once('connect.php');
 
@@ -48,9 +49,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Modify Database</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="question_1.php">Add</a></li>
-                        <li><a class="dropdown-item" href="question_2.php">Edit</a></li>
-                        <li><a class="dropdown-item" href="question_2.php">Delete</a></li>
+                        <li><a class="dropdown-item" href="add_painting.php">Add New Painting</a></li>
+                        <li><a class="dropdown-item" href="add_painting.php">Edit</a></li>
+                        <li><a class="dropdown-item" href="add_painting.php">Delete</a></li>
                     </ul>
                 </li>
                 <!-- Search. -->
