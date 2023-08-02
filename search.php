@@ -15,7 +15,7 @@
         ?>
         <div class="container-fluid">
             <!-- Heading. -->
-            <h2>Result:</h2>
+            <h2>Search Painting Title</h2>
             <?php
             if (isset($_GET['query'])) {
                 $search_query = $_GET['query'];
@@ -23,11 +23,12 @@
                 // Here, you can perform your search logic using the $search_query
                 // For example, you could search a database or search through files.
                 // Display the search results or perform other actions
-                echo "You searched for: " . $search_query;
+                echo "You searched for: <strong class='bold-text'>$search_query</strong> <br>";
+                echo "Result: ";
 
                 $statement = "SELECT * FROM paintings WHERE title = '$search_query'";
                 //Table
-                include_once('paintings_table.php');
+                include_once('search_table.php');
             }
             ?>
         </div>
