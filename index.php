@@ -13,18 +13,42 @@
         <?php
         include_once('navbar.php');
         ?>
-        <div class="container-fluid">
-            <h2>AT2 Sprint 1</h2>
-            <p class="lead">Team name: King Rabbit<br>
-                Team Leader: Derrick Choong<br>
-                Team Member #1: Francis Sullivan<br>
-                Team Member #2: Dongyun Huang<br>
-            <p></p>
-            <h3>Minimum Client Requirements</h3>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+        <div class="container-fluid" style="height: 50vh;">
+
+            <div class="d-flex justify-content-center align-items-center" style="height: 70vh;">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="waterliliesandjapanesebridge.gif" class="d-block" alt="first_one" width="500" height="500">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="weaver.gif" class="d-block" alt="second_one" width="500" height="500">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="baldumoulindelagalette.gif" class="d-block" alt="third_one" width="500" height="500">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center" style="height: 25vh;">
+                <h2>AT2 Sprint 1 </h2>
+                <p class="lead">
+                    Team name: <img src="images\logo.png" class="img-thumbnail" alt="logo" width="30" height="30"> King Rabbit<br>
+                    Team Leader: Derrick Choong<br>
+                    Team Member #1: Francis Sullivan<br>
+                    Team Member #2: Dongyun Huang<br>
+                </p>
+            </div>
+
             <?php
             include_once('footer.php');
             ?>
