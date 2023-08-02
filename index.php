@@ -15,17 +15,17 @@
         ?>
         <div class="container-fluid" style="height: 50vh;">
 
-            <div class="d-flex justify-content-center align-items-center" style="height: 70vh;">
+            <div class="d-flex justify-content-center align-items-center" style="height: 65vh;">
                 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="waterliliesandjapanesebridge.gif" class="d-block" alt="first_one" width="500" height="500">
+                            <img src="waterliliesandjapanesebridge.gif" class="d-block" alt="first_one" width="400" height="400">
                         </div>
                         <div class="carousel-item">
-                            <img src="weaver.gif" class="d-block" alt="second_one" width="500" height="500">
+                            <img src="weaver.gif" class="d-block" alt="second_one" width="400" height="400">
                         </div>
                         <div class="carousel-item">
-                            <img src="baldumoulindelagalette.gif" class="d-block" alt="third_one" width="500" height="500">
+                            <img src="images\donitondo.gif" class="d-block" alt="third_one" width="400" height="400">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -39,8 +39,8 @@
                 </div>
             </div>
 
-            <div class="d-flex justify-content-center align-items-center" style="height: 25vh;">
-                <h2>AT2 Sprint 1 </h2>
+            <div class="d-flex justify-content-center align-items-center" style="height: 22vh;">
+                <h2>AT2 Sprint 1 &nbsp;</h2>
                 <p class="lead">
                     Team name: <img src="images\logo.png" class="img-thumbnail" alt="logo" width="30" height="30"> King Rabbit<br>
                     Team Leader: Derrick Choong<br>
