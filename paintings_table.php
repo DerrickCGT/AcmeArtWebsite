@@ -13,7 +13,7 @@
                 <tr>
                     <!-- Headers. --> 
                     <th>ID</th>
-                    <th>Title</th>
+                    <th>Painting Title</th>
                     <th>Artist</th>
                     <th>Style</th>
                     <th>Media</th>

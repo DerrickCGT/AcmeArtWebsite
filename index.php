@@ -19,10 +19,10 @@
                 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="waterliliesandjapanesebridge.gif" class="d-block" alt="first_one" width="400" height="400">
+                            <img src="images\waterliliesandjapanesebridge.gif" class="d-block" alt="first_one" width="400" height="400">
                         </div>
                         <div class="carousel-item">
-                            <img src="weaver.gif" class="d-block" alt="second_one" width="400" height="400">
+                            <img src="images\weaver.gif" class="d-block" alt="second_one" width="400" height="400">
                         </div>
                         <div class="carousel-item">
                             <img src="images\donitondo.gif" class="d-block" alt="third_one" width="400" height="400">

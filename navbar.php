@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-yellow-green bg-yellow-green">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -54,11 +54,16 @@
                         <li><a class="dropdown-item" href="add_painting.php">Delete</a></li>
                     </ul>
                 </li>
-                <!-- Search. -->
+                <!-- Contact Page. -->
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Search</a>
+                    <a class="nav-link" aria-current="page" href="contact.php">Contacts</a>
                 </li>
             </ul>
+            <!-- Search. -->
+            <form class="d-flex" method="GET" action="search.php">
+                <input class="form-control me-2" type="search" placeholder="Search Title" aria-label="Search" name="query">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
         </div>
     </div>
 </nav>
