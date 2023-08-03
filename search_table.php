@@ -7,37 +7,96 @@
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
     ?>
     <body>
-        <!-- Card_Horizontal -->
-        <div class="card mb-3">
-            <?php
-            foreach ($rows as $row) {
-                ?>
-                <div class="row g-0">
-                    <div class="col-md-4" style="max-height: 500px;">
-                        <?php echo '<img class="thumb" style="max-height: 500px;" src="data:image/png;base64,' . base64_encode($row['full_pic']) . '"/>'; ?>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <!-- Typography_Description list alignment -->
-                            <dl class="row">
-                                <dt class="col-sm-2">Painting Title</dt>
-                                <dd class="col-sm-9"><?php echo $row['title']; ?></dd>
-                                <dt class="col-sm-2">Finished</dt>
-                                <dd class="col-sm-9"><?php echo $row['finished']; ?></dd>
-                                <dt class="col-sm-2">Paint Media</dt>
-                                <dd class="col-sm-9"><?php echo $row['media']; ?></dd>
-                                <dt class="col-sm-2">Artist Name</dt>
-                                <dd class="col-sm-9"><?php echo $row['artist']; ?></dd>
-                                <dt class="col-sm-2">Style</dt>
-                                <dd class="col-sm-9"><?php echo $row['style']; ?></dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <?php
+        <!--CSS styling--> 
+        <style>
+            /* Center the table container */
+            .table-container {
+                display: flex;
+                justify-content: center;
+                align-items: center; /* Center vertically as well */
             }
-            ?>
+
+            .table {
+                width: 100%;
+            }
+
+            .table img.thumb {
+                display: block;
+                max-height: 500px;
+                margin: 0 auto; /* Center the image */
+            }
+
+            /* Adjust the spacing between cells */
+            .table td {
+                padding: 10px;
+                white-space: nowrap; /* Disable text wrapping */
+            }
+
+            /* Adjust the spacing between rows */
+            .table tr {
+                margin-bottom: 10px;
+            }
+
+            /* Align the text in the second column to the right */
+            .text-right p {
+                text-align: right;
+            }
+
+            /* Set a bigger width for the first column */
+            .narrow-column-first {
+                width: 350px; /* Adjust the width as per your preference */
+            }
+
+            /* Set a smaller width for the second column */
+            .narrow-column {
+                width: 180px; /* Adjust the width as per your preference */
+            }
+        </style>
+
+        <!-- Table -->
+        <!-- Table Container -->
+        <div class="table-container">
+            <table class="table">
+                <tbody>
+                    <?php
+                    foreach ($rows as $row) {
+                        ?>
+                        <tr>
+                            <!-- Content. --> 
+                            <td class="narrow-column-first"></td> <!-- Add an extra column before the img, get more white space --> 
+                            <td class="text-right narrow-column"> <!-- Add the class "text-right" and "narrow-column" -->                                
+                                <?php echo '<img class="thumb" src="data:image/png;base64,' . base64_encode($row['full_pic']) . '"/>'; ?>
+                            </td>
+                            <td class="text-right narrow-column"> <!-- Add the class "text-right" and "narrow-column" -->
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <p class="text-right">Painting Title</p>
+                                <p class="text-right">Finished</p>
+                                <p class="text-right">Paint Media</p>
+                                <p class="text-right">Artist Name</p>
+                                <p class="text-right">Style</p>
+                            </td>
+                            <td>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <p><?php echo $row['title']; ?></p>
+                                <p><?php echo $row['finished']; ?></p>
+                                <p><?php echo $row['media']; ?> (i.e. oil on canvas)</p>
+                                <p><?php echo $row['artist']; ?></p>
+                                <p><?php echo $row['style']; ?></p>
+                            </td>                
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
         </div>
+
         <!-- Footer. -->
         <?php
         include_once('footer.php');
