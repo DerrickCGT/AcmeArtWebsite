@@ -11,65 +11,72 @@ $rows = $result->fetchAll(PDO::FETCH_ASSOC);
     <!-- Head. -->
     <head>
         <!-- Bootstrap call. --> 
-        <?php   
+        <?php
         include_once('bootstrap.php');
         ?>
         <!-- Title. -->
-        <title>Paintings - AT2</title>
+        <title>Add new painting</title>
     </head>
+
     <body>
         <?php
         include_once('navbar.php');
-        foreach ($rows as $row) {
-            if ($row['id'] == $ID) {
-                ?>
-                <div class="container-fluid">
-                    <!-- Heading. -->
-                    <h2>ADD...</h2>
-                    <h2>
-                        <tr><td><?php echo $row['title']; ?></td></tr>
-                    </h2>
-                    <!-- Accordion. --> 
-                    <div class="accordion" id="accordionExample">
-                        <!-- Description. --> 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Description</button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                <?php
-                                            echo '<tr>';
-                                            echo '<td>' . $row['id'] . '</td>'; 
-                                            echo '<td>' . $row['title'] . '</td>';
-                                            echo '<td>' . $row['finished'] . '</td>';
-                                            echo '<td>' .
-                                            '<img src = "data:image/gif;base64,' . base64_encode($row['thumbnail']) . '" width = "50px" height = "50px"/>'
-                                            . '</td>';
-                                            echo '</tr>';                                        
-                                        ?>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Answer. --> 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Answer</button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <tr><td><?php echo $row['Answer']; ?></td></tr>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <?php
-                    include_once('footer.php');
-                    ?>
-                </div>
-                <?php
-            }
-        }
         ?>
+        <div class="container-fluid">
+            <h2>Add new painting: </h2>
+            
+            //<?php            
+//            // Get form input values
+//            $id = $_POST['add_id'];
+//            $title = $_POST['add_title'];
+//            $artist = $_POST['add_artist'];
+//            $style = $_POST['add_style'];
+//            $media = $_POST['add_media'];
+//            $finished = $_POST['add_finished'];
+//            // Insert data into the table
+//            $insert_sql = "INSERT INTO paintings (id, title, artist, style, media, finished)
+//            VALUES ('$id', '$title', '$artist', '$style', '$media', '$finished')";
+//            ?>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="add_id" style="width: 110px;">ID</span>
+                <input type="text" class="form-control" placeholder="id" aria-label="id" aria-describedby="add_id">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="add_title" style="width: 110px;">Painting Title</span>
+                <input type="text" class="form-control" placeholder="title" aria-label="title" aria-describedby="add_title">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="add_artist" style="width: 110px;">Artist</span>
+                <input type="text" class="form-control" placeholder="artist" aria-label="artist" aria-describedby="add_artist">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="add_style" style="width: 110px;">Style</span>
+                <input type="text" class="form-control" placeholder="style" aria-label="style" aria-describedby="add_style">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="add_media" style="width: 110px;">Media</span>
+                <input type="text" class="form-control" placeholder="media" aria-label="media" aria-describedby="add_media">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="add_finished" style="width: 110px;">Finished</span>
+                <input type="text" class="form-control" placeholder="finished" aria-label="finished" aria-describedby="add_finished">
+            </div>
+            <div class="mb-3">
+                <label for="add_thumbnail" class="form-label">Choose thumbnail:</label>
+                <input class="form-control" type="file" id="add_thumbnail">
+            </div>
+            <div class="mb-3">
+                <label for="add_full_pic" class="form-label">Choose full picture:</label>
+                <input class="form-control" type="file" id="add_full_pic">
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-success" type="button">Save</button>
+            </div>
+
+            <?php
+            include_once('footer.php');
+            ?>
+        </div>>
     </body>
 </html>
