@@ -50,8 +50,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Modify Database</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="add_painting.php">Add New Painting</a></li>
-                        <li><a class="dropdown-item" href="add_painting.php">Edit</a></li>
-                        <li><a class="dropdown-item" href="add_painting.php">Delete</a></li>
+                        <li><a class="dropdown-item" href="edit.php">Edit/Delete</a></li>
                     </ul>
                 </li>
                 <!-- Contact Page. -->
