@@ -7,7 +7,7 @@
         include_once('bootstrap.php');
         ?>
         <!-- Title. -->
-        <title>Edit/Delete - AT2 Sprint 1</title>
+        <title>Delete - AT2 Sprint 1</title>
     </head>
     <body>
         <?php
@@ -15,11 +15,12 @@
         ?>
         <div class="container-fluid">
             <!-- Heading. -->
-            <h2>Edit or Delete a Painting</h2>
+            <h2>Delete Painting</h2>
             <?php
-            $statement = "SELECT * FROM paintings";
-            //Calling Table
-            include_once('paintings_table_edit.php');
+            $selection = $_GET['id'];
+            $statement = "SELECT * FROM paintings WHERE id = '$selection'";
+            //Table
+            include_once('paintings_table_delete.php');
             ?>
         </div>
     </body>

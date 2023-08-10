@@ -7,7 +7,7 @@
         include_once('bootstrap.php');
         ?>
         <!-- Title. -->
-        <title>Select All - AT2 Sprint 1</title>
+        <title>Add - AT2 Sprint 1</title>
     </head>
     <body>
         <!-- Navbar. -->
@@ -17,7 +17,7 @@
         <!-- Container. -->
         <div class="container-fluid">
             <!-- Heading. -->
-            <h2>All Paintings</h2>
+            <h2>Add Painting Status</h2>
             <!-- Backend code. -->
             <?php
             // Connect.
@@ -42,6 +42,9 @@
                 }
             } catch (Exception $ex) {
                 echo "Add failed :( Something was entered incorectly. Please check that every box was filled in correctly and try again.";
+                ?>
+                <img src = "images\surprised_pikachu.png" class = "d-block" alt = "second_one" width = "400" height = "350">
+                <?php
             }
             ?>
             <!-- Footer. -->
