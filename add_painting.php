@@ -18,34 +18,34 @@
         <!-- Container. -->
         <div class="container-fluid">
             <!-- Heading. -->
-            <h2>Add new painting: </h2>
+            <h2>Add New Painting: </h2>
             <!-- Form. -->
             <!-- Source: https://www.w3schools.com/TAGs/att_form_enctype.asp -->
             <form action="add_painting_backend.php" method="post" enctype="multipart/form-data">
                 <!-- title. -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="add_title" style="width: 110px;">Title</span>
-                    <input type="text" class="form-control" placeholder="title" aria-label="title" aria-describedby="add_title" name="add_title">
+                    <input type="text" class="form-control" placeholder="e.g. 'Mona Lisa'" aria-label="title" aria-describedby="add_title" name="add_title">
                 </div>
                 <!-- artist. -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="add_artist" style="width: 110px;">Artist</span>
-                    <input type="text" class="form-control" placeholder="artist" aria-label="artist" aria-describedby="add_artist" name="add_artist">
+                    <input type="text" class="form-control" placeholder="e.g. 'Leonardo da Vinci'" aria-label="artist" aria-describedby="add_artist" name="add_artist">
                 </div>
                 <!-- style. -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="add_style" style="width: 110px;">Style</span>
-                    <input type="text" class="form-control" placeholder="style" aria-label="style" aria-describedby="add_style" name="add_style">
+                    <input type="text" class="form-control" placeholder="e.g. 'Portrait'" aria-label="style" aria-describedby="add_style" name="add_style">
                 </div>
                 <!-- media. -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="add_media" style="width: 110px;">Media</span>
-                    <input type="text" class="form-control" placeholder="media" aria-label="media" aria-describedby="add_media" name="add_media">
+                    <input type="text" class="form-control" placeholder="e.g. 'Watercolour'" aria-label="media" aria-describedby="add_media" name="add_media">
                 </div>
                 <!-- finished. -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="add_finished" style="width: 110px;">Finished</span>
-                    <input type="text" class="form-control" placeholder="finished" aria-label="finished" aria-describedby="add_finished" name="add_finished">
+                    <input type="text" class="form-control" placeholder="'YYYY' date format" aria-label="finished" aria-describedby="add_finished" name="add_finished">
                 </div>
                 <!-- thumbnail. -->
                 <div class="mb-3">
