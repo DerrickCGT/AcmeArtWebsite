@@ -18,6 +18,8 @@
             <h2>Paintings by Style</h2>
             <?php
             $selection = $_GET['TAG'];
+            echo "You filtered for: <strong class='bold-text'>$selection</strong> <br>";
+            echo "Result: ";
             $statement = "SELECT * FROM paintings WHERE style = '$selection'";
             //Table
             include_once('paintings_table.php');
