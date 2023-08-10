@@ -15,7 +15,7 @@
         ?>
         <div class="container-fluid" style="height: 50vh;">
 
-            <div class="d-flex justify-content-center align-items-center" style="height: 65vh;">
+            <div class="d-flex justify-content-center align-items-center" style="height: 45vh;">
                 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -38,11 +38,14 @@
                     </button>
                 </div>
             </div>
+            <div class="d-flex justify-content-center align-items-center">
 
-            <div class="d-flex justify-content-center align-items-center" style="height: 22vh;">
-                <h2>AT2 Sprint 1 &nbsp;</h2>
+                <h2>AT2 Sprint 1 </h2>
+            </div>
+            <div class="d-flex justify-content-center align-items-center" style="height: 20vh;">
+
                 <p class="lead">
-                    Team name: <img src="images\logo.png" class="img-thumbnail" alt="logo" width="30" height="30"> King Rabbit<br>
+                    Team name: <img src="images\logo.png" class="img-thumbnail" alt="logo" width="80" height="80"> King Rabbit<br>
                     Team Leader: Derrick Choong<br>
                     Team Member #1: Francis Sullivan<br>
                     Team Member #2: Dongyun Huang<br>
