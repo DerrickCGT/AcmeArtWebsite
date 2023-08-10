@@ -14,19 +14,31 @@
         <!-- Navbar. -->
         <?php
         include_once('navbar.php');
-
+       
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
             $sql = "SELECT * FROM paintings WHERE id = :id";
             $stmt = connect()->prepare($sql);
             $stmt->bindParam(':id', $id);
-            $stmt->execute();
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            // Now you can populate the form fields with the existing data
-            $title = $row['title'];
-            $artist = $row['artist'];
-            // Repeat for other fields...
+            if ($stmt->execute()) {
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                if ($row) {
+                    // Populate variables with fetched data
+                    $title = isset($row['title']) ? $row['title'] : '';
+                    $artist = isset($row['artist']) ? $row['artist'] : '';
+                    $style = isset($row['style']) ? $row['style'] : '';
+                    $media = isset($row['media']) ? $row['media'] : '';
+                    $finished = isset($row['finished']) ? $row['finished'] : '';
+                    $thumbnail = isset($row['thumbnail']) ? $row['thumbnail'] : '';
+                    $full_pic = isset($row['full_pic']) ? $row['full_pic'] : '';
+                } else {
+                    echo "No data found for ID: $id";
+                }
+            } else {
+                echo "Query failed: " . $stmt->errorInfo()[2];
+            }
         }
         ?>
         <!-- Container. -->
@@ -44,32 +56,32 @@
                 <!-- artist. -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="add_artist" style="width: 110px;">Artist</span>
-                    <input type="text" class="form-control" placeholder="artist" aria-label="artist" aria-describedby="add_artist" name="add_artist">
+                    <input type="text" class="form-control" placeholder="artist" aria-label="artist" aria-describedby="add_artist" name="add_artist" value="<?php echo $artist; ?>">
                 </div>
                 <!-- style. -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="add_style" style="width: 110px;">Style</span>
-                    <input type="text" class="form-control" placeholder="style" aria-label="style" aria-describedby="add_style" name="add_style">
+                    <input type="text" class="form-control" placeholder="style" aria-label="style" aria-describedby="add_style" name="add_style" value="<?php echo $style; ?>">
                 </div>
                 <!-- media. -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="add_media" style="width: 110px;">Media</span>
-                    <input type="text" class="form-control" placeholder="media" aria-label="media" aria-describedby="add_media" name="add_media">
+                    <input type="text" class="form-control" placeholder="media" aria-label="media" aria-describedby="add_media" name="add_media" value="<?php echo $media; ?>">
                 </div>
                 <!-- finished. -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="add_finished" style="width: 110px;">Finished</span>
-                    <input type="text" class="form-control" placeholder="finished" aria-label="finished" aria-describedby="add_finished" name="add_finished">
+                    <input type="text" class="form-control" placeholder="finished" aria-label="finished" aria-describedby="add_finished" name="add_finished" value="<?php echo $finished; ?>">
                 </div>
                 <!-- thumbnail. -->
                 <div class="mb-3">
                     <label for="add_thumbnail" class="form-label">Choose thumbnail:</label>
-                    <input class="form-control" type="file" id="add_thumbnail" name="add_thumbnail">
+                    <input class="form-control" type="file" id="add_thumbnail" name="add_thumbnail" value="<?php echo '<img class="thumb" src="data:image/png;base64,' . base64_encode($row['thumbnail']) . '"/>'; ?>">
                 </div>
                 <!-- full_pic. -->
                 <div class="mb-3">
                     <label for="add_full_pic" class="form-label">Choose full picture:</label>
-                    <input class="form-control" type="file" id="add_full_pic" name="add_full_pic">
+                    <input class="form-control" type="file" id="add_full_pic" name="add_full_pic" value="<?php echo $full_pic; ?>">
                 </div>
                 <!-- Save. -->
                 <div class="d-grid gap-2 col-6 mx-auto">

@@ -38,7 +38,7 @@
                         <td>
 <!--                            <button type="button" class="btn btn-outline-primary" name="edit_button">Edit</button> &nbsp;&nbsp;
                             <button type="button" class="btn btn-outline-danger" name="delete_button">Delete</button>-->
-                            <a href="edit_painting.php?id=' . $row['id'] . '" class="btn btn-outline-primary" name="edit_button">Edit</a>
+                            <a href="edit_painting.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-primary" name="edit_button">Edit</a>
                         <a href="delete_page.php?id=' . $row['id'] . '" class="btn btn-outline-danger" name="delete_button">Delete</a>
                         </td>
                     </tr>
