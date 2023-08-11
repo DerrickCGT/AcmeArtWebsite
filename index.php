@@ -42,7 +42,7 @@
 
                 <h2>AT2 Sprint 1 </h2>
             </div>
-            <div class="d-flex justify-content-center align-items-center" style="height: 20vh;">
+            <div class="d-flex justify-content-center align-items-center" style="height: 23vh;">
 
                 <p class="lead">
                     Team name: <img src="images\logo.png" class="img-thumbnail" alt="logo" width="80" height="80"> King Rabbit<br>
