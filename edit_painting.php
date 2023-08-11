@@ -14,7 +14,7 @@
         <!-- Navbar. -->
         <?php
         include_once('navbar.php');
-       
+
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
             $sql = "SELECT * FROM paintings WHERE id = :id";
@@ -73,15 +73,21 @@
                     <span class="input-group-text" id="add_finished" style="width: 110px;">Finished</span>
                     <input type="text" class="form-control" placeholder="finished" aria-label="finished" aria-describedby="add_finished" name="add_finished" value="<?php echo $finished; ?>">
                 </div>
+                
+                <!--the file input field itself cannot be pre-filled with a default value pointing to a local file on the user's machine due to browser security restrictions.-->
                 <!-- thumbnail. -->
                 <div class="mb-3">
-                    <label for="add_thumbnail" class="form-label">Choose thumbnail:</label>
-                    <input class="form-control" type="file" id="add_thumbnail" name="add_thumbnail" value="<?php echo '<img class="thumb" src="data:image/png;base64,' . base64_encode($row['thumbnail']) . '"/>'; ?>">
+                    <label for="add_thumbnail" class="form-label">Choose thumbnail:</label>                    
+                    <!-- This is the input element for uploading the thumbnail image -->
+                    <input class="form-control" type="file" id="add_thumbnail" name="add_thumbnail">
+                    <!-- This is the image preview tag that displays the thumbnail if available -->
+                    <?php // echo '<img class="thumb" src="data:image/png;base64,' . base64_encode($row['thumbnail']) . '"/>'; ?>  
                 </div>
                 <!-- full_pic. -->
                 <div class="mb-3">
                     <label for="add_full_pic" class="form-label">Choose full picture:</label>
-                    <input class="form-control" type="file" id="add_full_pic" name="add_full_pic" value="<?php echo $full_pic; ?>">
+                    <input class="form-control" type="file" id="add_full_pic" name="add_full_pic">
+                    <?php echo '<img class="thumb" src="data:image/png;base64,' . base64_encode($row['full_pic']) . '"/>'; ?>
                 </div>
                 <!-- Save. -->
                 <div class="d-grid gap-2 col-6 mx-auto">

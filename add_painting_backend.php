@@ -27,15 +27,15 @@
                 // Use POST to save form inputs to php variables.
                 if (isset($_POST["submit_button"])) {
 
-                    $title = $_POST["add_title"];
-                    $artist = $_POST["add_artist"];
-                    $style = $_POST["add_style"];
-                    $media = $_POST["add_media"];
-                    $finished = $_POST["add_finished"];
+                    $title = $_POST["add_title"] ? $_POST["add_title"] : '';
+                    $artist = $_POST["add_artist"] ? $_POST["add_artist"] : '';
+                    $style = $_POST["add_style"] ? $_POST["add_style"] : '';
+                    $media = $_POST["add_media"] ? $_POST["add_media"] : '';
+                    $finished = $_POST["add_finished"] ? $_POST["add_finished"] : '';
                     // Convert Images to variables.
                     // Source: https://www.sitepoint.com/community/t/php-getting-image-from-blob/8680
-                    $thumbnail = addslashes(file_get_contents($_FILES['add_thumbnail']['tmp_name']));
-                    $full_pic = addslashes(file_get_contents($_FILES['add_full_pic']['tmp_name']));
+                    $thumbnail = $_FILES['add_thumbnail']['tmp_name'] ? addslashes(file_get_contents($_FILES['add_thumbnail']['tmp_name'])) : '';
+                    $full_pic = $_FILES['add_full_pic']['tmp_name'] ? addslashes(file_get_contents($_FILES['add_full_pic']['tmp_name'])) : '';
                     $statement = "INSERT INTO paintings (title, artist, style, media, finished, thumbnail, full_pic) VALUES ('$title', '$artist', '$style', '$media', '$finished', '$thumbnail', '$full_pic')";
                     $execute = (connect()->query($statement));
                     echo "Record was added successfully! :).";
