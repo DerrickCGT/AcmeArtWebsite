@@ -80,14 +80,17 @@
                     <label for="add_thumbnail" class="form-label">Choose thumbnail:</label>                    
                     <!-- This is the input element for uploading the thumbnail image -->
                     <input class="form-control" type="file" id="add_thumbnail" name="add_thumbnail">
+                    <label class="form-label">Leave blank to keep existing image: </label>
                     <!-- This is the image preview tag that displays the thumbnail if available -->
-                    <?php // echo '<img class="thumb" src="data:image/png;base64,' . base64_encode($row['thumbnail']) . '"/>'; ?>  
+                    <p> <?php echo '<img class="thumb" src="data:image/png;base64,' . base64_encode($row['thumbnail']) . '"/>'; ?></p>
                 </div>
                 <!-- full_pic. -->
                 <div class="mb-3">
                     <label for="add_full_pic" class="form-label">Choose full picture:</label>
-                    <input class="form-control" type="file" id="add_full_pic" name="add_full_pic">
-                    <?php echo '<img class="thumb" src="data:image/png;base64,' . base64_encode($row['full_pic']) . '"/>'; ?>
+                    <input class="form-control" type="file" id="add_full_pic" name="add_full_pic" value="<?php echo $title; ?>">
+                    <label class="form-label">Leave blank to keep existing image: </label>
+                    <!-- This is the image preview tag that displays the full_pic if available -->
+                    <p> <?php echo '<img class="thumb" src="data:image/png;base64,' . base64_encode($row['full_pic']) . '"/>'; ?></p>
                 </div>
                 <!-- Save. -->
                 <div class="d-grid gap-2 col-6 mx-auto">
