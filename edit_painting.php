@@ -7,7 +7,7 @@
         include_once('bootstrap.php');
         ?>
         <!-- Title. -->
-        <title>Edit painting</title>
+        <title>Edit - AT2 Sprint 1</title>
     </head>
     <!-- Body. -->
     <body>
@@ -47,7 +47,7 @@
             <h2>Edit painting: </h2>
             <!-- Form. -->
             <!-- Source: https://www.w3schools.com/TAGs/att_form_enctype.asp -->
-            <form action="add_painting_backend.php" method="post" enctype="multipart/form-data">
+            <form action="edit_painting_backend.php?id=<?php echo $id?>" method="post" enctype="multipart/form-data">
                 <!-- title. -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="add_title" style="width: 110px;">Title</span>
