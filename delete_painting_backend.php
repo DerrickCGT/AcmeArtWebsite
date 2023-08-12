@@ -27,7 +27,7 @@
                 if ($_GET['id'] == "not_applicable") {
                     echo "The record was spared a painful death.";
                     ?>
-                    <img src="images\phew.jpg" class="d-block" alt="second_one" width="400" height="200">
+                    <img src="images\phew.jpg" class="d-block" alt="second_one">
                     <?php
                 } else {
                     $id = $_GET['id'];
@@ -38,7 +38,7 @@
             } catch (Exception $ex) {
                 echo ":( Something went wrong.";
                 ?>
-                <img src = "images\surprised_pikachu.png" class = "d-block" alt = "second_one" width = "400" height = "350">
+                <img src = "images\surprised_pikachu.png" class = "d-block" alt = "second_one">
                 <?php
             }
             ?>

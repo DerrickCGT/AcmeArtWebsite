@@ -26,6 +26,7 @@
 
                 if ($row) {
                     // Populate variables with fetched data
+                    $id = isset($row['id']) ? $row['id'] : '';
                     $title = isset($row['title']) ? $row['title'] : '';
                     $artist = isset($row['artist']) ? $row['artist'] : '';
                     $style = isset($row['style']) ? $row['style'] : '';
@@ -48,6 +49,11 @@
             <!-- Form. -->
             <!-- Source: https://www.w3schools.com/TAGs/att_form_enctype.asp -->
             <form action="edit_painting_backend.php?id=<?php echo $id?>" method="post" enctype="multipart/form-data">
+                <!-- id. -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="add_id" style="width: 110px;">Id</span>
+                    <input type="text" class="form-control" placeholder="id" aria-label="id" aria-describedby="add_id" name="add_id" value="<?php echo $id; ?>">
+                </div>
                 <!-- title. -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="add_title" style="width: 110px;">Title</span>
@@ -82,7 +88,7 @@
                     <input class="form-control" type="file" id="add_thumbnail" name="add_thumbnail">
                     <label class="form-label">Leave blank to keep existing image: </label>
                     <!-- This is the image preview tag that displays the thumbnail if available -->
-                    <p> <?php echo '<img class="thumb" src="data:image/png;base64,' . base64_encode($row['thumbnail']) . '"/>'; ?></p>
+                    <p> <?php echo '<img class="thumb" style="width: 100px;" src="data:image/png;base64,' . base64_encode($row['thumbnail']) . '"/>'; ?></p>
                 </div>
                 <!-- full_pic. -->
                 <div class="mb-3">
@@ -90,7 +96,7 @@
                     <input class="form-control" type="file" id="add_full_pic" name="add_full_pic" value="<?php echo $title; ?>">
                     <label class="form-label">Leave blank to keep existing image: </label>
                     <!-- This is the image preview tag that displays the full_pic if available -->
-                    <p> <?php echo '<img class="thumb" src="data:image/png;base64,' . base64_encode($row['full_pic']) . '"/>'; ?></p>
+                    <p> <?php echo '<img class="thumb" style="width: 150px;" src="data:image/png;base64,' . base64_encode($row['full_pic']) . '"/>'; ?></p>
                 </div>
                 <!-- Save. -->
                 <div class="d-grid gap-2 col-6 mx-auto">

@@ -33,7 +33,7 @@
                         <td><?php echo $row['style']; ?></td>
                         <td><?php echo $row['media']; ?></td>
                         <td><?php echo $row['finished']; ?></td>
-                        <td><?php echo '<img class="thumb" src="data:image/png;base64,' . base64_encode($row['thumbnail']) . '"/>'; ?></td>
+                        <td><?php echo '<img class="thumb" style="width: 100px;" src="data:image/png;base64,' . base64_encode($row['thumbnail']) . '"/>'; ?></td>
                     </tr>
                     <?php
                 }

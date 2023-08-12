@@ -34,12 +34,10 @@
                         <td><?php echo $row['style']; ?></td>
                         <td><?php echo $row['media']; ?></td>
                         <td><?php echo $row['finished']; ?></td>
-                        <td><?php echo '<img class="thumb" src="data:image/png;base64,' . base64_encode($row['thumbnail']) . '"/>'; ?></td>
+                        <td><?php echo '<img class="thumb" style="width: 100px;" src="data:image/png;base64,' . base64_encode($row['thumbnail']) . '"/>'; ?></td>
                         <td>
-<!--                            <button type="button" class="btn btn-outline-primary" name="edit_button">Edit</button> &nbsp;&nbsp;
-                            <button type="button" class="btn btn-outline-danger" name="delete_button">Delete</button>-->
                             <a href="edit_painting.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-primary" name="edit_button">Edit</a>
-                        <a href="delete_painting.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-danger" name="delete_button">Delete</a>
+                            <a href="delete_painting.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-danger" name="delete_button">Delete</a>
                         </td>
                     </tr>
                     <?php
