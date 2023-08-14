@@ -85,7 +85,7 @@
                                 <br>
                                 <p><?php echo $row['title']; ?></p>
                                 <p><?php echo $row['finished']; ?></p>
-                                <p><?php echo $row['media']; ?> (i.e. oil on canvas)</p>
+                                <p><?php echo $row['media']; ?></p>
                                 <p><?php echo $row['artist']; ?></p>
                                 <p><?php echo $row['style']; ?></p>
                             </td>                
