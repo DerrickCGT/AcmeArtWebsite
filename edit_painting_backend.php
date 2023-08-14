@@ -26,21 +26,14 @@
             try {
                 // Use POST to save form inputs to php variables.
                 if (isset($_POST["submit_button"])) {
-                    $id = $_GET["id"];
-//                    // PK cannot be null & unique.
-//                    $add_id = isset($_POST["add_id"]) ? $_POST["add_id"] : '';
-//
-//                    if ($add_id == $id) {
-//                        return;
-//                    }
-                    
+                    $id = $_GET["id"];                    
                     $title = $_POST["add_title"] ? $_POST["add_title"] : '';
                     $artist = $_POST["add_artist"] ? $_POST["add_artist"] : '';
                     $style = $_POST["add_style"] ? $_POST["add_style"] : '';
                     $media = $_POST["add_media"] ? $_POST["add_media"] : '';
                     $finished = $_POST["add_finished"] ? $_POST["add_finished"] : '';
                     if ((empty($_FILES['add_thumbnail']['tmp_name'])) && (empty($_FILES['add_full_pic']['tmp_name']))) {
-                        $statement = "UPDATE paintings SET id = '$id', title = '$title', artist = '$artist', style = '$style', media = '$media', finished = '$finished' WHERE id = '$id'";
+                        $statement = "UPDATE paintings SET title = '$title', artist = '$artist', style = '$style', media = '$media', finished = '$finished' WHERE id = '$id'";
                     }
                     if ((!empty($_FILES['add_thumbnail']['tmp_name'])) && (empty($_FILES['add_full_pic']['tmp_name']))) {
                         // Gives the user feedback if the size of an image they trying to upload is too large.
@@ -52,7 +45,7 @@
                             return;
                         }
                         $thumbnail = $_FILES['add_thumbnail']['tmp_name'] ? addslashes(file_get_contents($_FILES['add_thumbnail']['tmp_name'])) : '';
-                        $statement = "UPDATE paintings SET id = '$id', title = '$title', artist = '$artist', style = '$style', media = '$media', finished = '$finished', thumbnail = '$thumbnail' WHERE id = '$id'";
+                        $statement = "UPDATE paintings SET title = '$title', artist = '$artist', style = '$style', media = '$media', finished = '$finished', thumbnail = '$thumbnail' WHERE id = '$id'";
                     }
                     if ((empty($_FILES['add_thumbnail']['tmp_name'])) && (!empty($_FILES['add_full_pic']['tmp_name']))) {
                         // Gives the user feedback if the size of an image they trying to upload is too large.
@@ -64,7 +57,7 @@
                             return;
                         }
                         $full_pic = $_FILES['add_full_pic']['tmp_name'] ? addslashes(file_get_contents($_FILES['add_full_pic']['tmp_name'])) : '';
-                        $statement = "UPDATE paintings SET id = '$id', title = '$title', artist = '$artist', style = '$style', media = '$media', finished = '$finished', full_pic = '$full_pic' WHERE id = '$id'";
+                        $statement = "UPDATE paintings SET title = '$title', artist = '$artist', style = '$style', media = '$media', finished = '$finished', full_pic = '$full_pic' WHERE id = '$id'";
                     }
                     if ((!empty($_FILES['add_thumbnail']['tmp_name'])) && (!empty($_FILES['add_full_pic']['tmp_name']))) {
                         // Gives the user feedback if the size of an image they trying to upload is too large.
@@ -77,7 +70,7 @@
                         }
                         $thumbnail = $_FILES['add_thumbnail']['tmp_name'] ? addslashes(file_get_contents($_FILES['add_thumbnail']['tmp_name'])) : '';
                         $full_pic = $_FILES['add_full_pic']['tmp_name'] ? addslashes(file_get_contents($_FILES['add_full_pic']['tmp_name'])) : '';
-                        $statement = "UPDATE paintings SET id = '$id', title = '$title', artist = '$artist', style = '$style', media = '$media', finished = '$finished', thumbnail = '$thumbnail', full_pic = '$full_pic' WHERE id = '$id'";
+                        $statement = "UPDATE paintings SET title = '$title', artist = '$artist', style = '$style', media = '$media', finished = '$finished', thumbnail = '$thumbnail', full_pic = '$full_pic' WHERE id = '$id'";
                     }
                     $execute = (connect()->query($statement));
                     echo "Record was updated successfully! :).";

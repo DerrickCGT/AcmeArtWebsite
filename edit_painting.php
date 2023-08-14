@@ -26,7 +26,6 @@
 
                 if ($row) {
                     // Populate variables with fetched data
-                    $id = isset($row['id']) ? $row['id'] : '';
                     $title = isset($row['title']) ? $row['title'] : '';
                     $artist = isset($row['artist']) ? $row['artist'] : '';
                     $style = isset($row['style']) ? $row['style'] : '';
@@ -49,11 +48,6 @@
             <!-- Form. -->
             <!-- Source: https://www.w3schools.com/TAGs/att_form_enctype.asp -->
             <form action="edit_painting_backend.php?id=<?php echo $id?>" method="post" enctype="multipart/form-data">
-                <!-- id. -->
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="add_id" style="width: 110px;">Id</span>
-                    <input type="text" class="form-control" placeholder="id" aria-label="id" aria-describedby="add_id" name="add_id" value="<?php echo $id; ?>">
-                </div>
                 <!-- title. -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="add_title" style="width: 110px;">Title</span>
