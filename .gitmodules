@@ -1,0 +1,6 @@
+[submodule "UpdateV2"]
+	path = UpdateV2
+	url = https://github.com/2022Dong/AcmeArtWebsiteV2
+[submodule "UpdateV3"]
+	path = UpdateV3
+	url = https://github.com/FrancisSullivan/AcmeArtWebsiteV3
